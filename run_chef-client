@@ -1,0 +1,34 @@
+#!/bin/bash
+
+##########################################################################################
+##								                                                                      ##
+##		Usage                                                                             ##
+##    Place the script in your favo cron director or setup a crontab rule               ##
+##				                                                                              ##
+##		Author:   Daniel Sol			                                                        ##
+##		Version:  v1.0			                                                              ##
+##                                GNU GENERAL PUBLIC LICENSE                            ##   
+##########################################################################################
+
+# Set PATH...
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+
+# Location of the log file. The file will be created if not found.
+LOG_LOCATION=/tmp/chef-lastrun.log
+
+# Find chef-client as it could be anywhere depending on how it was installend...
+CHEFCLIENT="$(which chef-client)"
+
+# If chef-client can't be found... inform the user when he runs the scipt....
+if [ -z "CHEFCLIENT" ]; then
+	echo "Couldn't find chef-client! Please install chef-client first! "
+	exit 0
+fi
+
+# And run the results aka chef-client....
+$CHEFCLIENT
+
+echo 'Keeping a simple run log here '$LOG_LOCATION
+date >> $LOG_LOCATION
+
+echo "That's all folks!"
