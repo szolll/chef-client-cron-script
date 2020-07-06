@@ -1,13 +1,8 @@
 #!/bin/bash
-
 ##########################################################################################
-##								                                                                      ##
-##		Usage                                                                             ##
-##    Place the script in your favo cron director or setup a crontab rule               ##
-##				                                                                              ##
-##		Author:   Daniel Sol			                                                        ##
-##		Version:  v1.0			                                                              ##
-##                                GNU GENERAL PUBLIC LICENSE                            ##   
+##				                                                        ##
+##		Author:   Daniel Sol                                                    ##
+##		Version:  v1.0			                                        ##
 ##########################################################################################
 
 # Set PATH...
